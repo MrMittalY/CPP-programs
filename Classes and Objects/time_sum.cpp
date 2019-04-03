@@ -1,3 +1,5 @@
+//Using the objects as arguments
+
 #include<iostream>
 using namespace std;
 
