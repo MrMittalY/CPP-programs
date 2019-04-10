@@ -1,3 +1,4 @@
+//Insertion of a binary tree and then printing the elements by traversing in all the 3 possible traversal orders.
 #include<iostream>
 using namespace std;
 
@@ -26,6 +27,27 @@ public:
 			root->right=Insert(root->right,x);
 
 	}
+	void preorder(Node* root)
+	{	if(root==NULL)
+			return;
+		cout<<endl<<root->data<<" ";
+		preorder(root->left);
+		preorder(root->right);	
+	}	
+	void postorder(Node* root)
+	{	if(root==NULL)
+			return;
+		postorder(root->left);
+		postorder(root->right);	
+		cout<<endl<<root->data<<" ";
+	}
+	void inorder(Node* root)
+	{	if(root==NULL)
+			return;
+		inorder(root->left);
+		cout<<endl<<root->data<<" ";
+		inorder(root->right);	
+	}
 };
 int main()
 {
@@ -37,5 +59,14 @@ int main()
 	{	cin>>no;
 		root=root->Insert(root,no);
 	}
+	cout<<"\n Preorder: ";
+	root->preorder(root);
+	
+	cout<<"\n Postorder: ";
+	root->postorder(root);
+
+	
+	cout<<"\n Inorder: ";
+	root->inorder(root);
 return 0;
 }
