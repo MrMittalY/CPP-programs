@@ -66,7 +66,7 @@ int main()
 					break;
 		case '5':	S.print();
 					break;
-		default:	break;
+		default:	return 0;break;
 	}ch=6;
 } while (ch>0&&ch<7);
 	return 0;
